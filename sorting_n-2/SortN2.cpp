@@ -1,7 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-#include"SortN2.h"
+#include"InsertionSort.h"
 int main(int argc, char **argv)
 {
 	int *Mas = new int[1];
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	
 	std::cout << "Sorting..." << std::endl;
-	BubbleSort( Mas, N);
+	InsertionSort( Mas, N);
 
 	for (int i = 0; i < N; i++)
 	{
