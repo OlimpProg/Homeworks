@@ -4,7 +4,7 @@
 #include"SortN2.h"
 int main(int argc, char **argv)
 {
-	int Mas[1000];
+	int *Mas = new int[1];
 	std::ifstream in(argv[1]);
 	std::ofstream out(argv[2]);
 	std::cout<< argv[0]<< std::endl;
@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 	{ 
 		while (!in.eof())
 		{
+			if (N * sizeof(int) >= sizeof(Mas))
+				Mas = resize(Mas, N);
 			in >> Mas[N];
 			N++;
 		}
@@ -29,7 +31,7 @@ int main(int argc, char **argv)
 		std::cout << Mas[i] << "\t";
 		out << Mas[i] << " ";
 	}
-
+	delete[] Mas;
 	in.close();
 	out.close();
 	return 42;
