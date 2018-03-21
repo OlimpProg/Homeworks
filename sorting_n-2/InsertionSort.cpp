@@ -1,6 +1,6 @@
 #include"InsertionSort.h"
 
-void InsertionSort(int *A, char N)
+void InsertionSort(int *A, int N)
 {
 	for (int i = 1; i < N; i++)
 	{
